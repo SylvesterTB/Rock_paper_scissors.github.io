@@ -14,7 +14,7 @@ function getComputerChoice()
             newWord = "Paper"
     }
     else
-    {
+    {    
             newWord = "Scissors" 
     }
     return newWord.toUpperCase()
