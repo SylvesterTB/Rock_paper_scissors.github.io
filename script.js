@@ -102,9 +102,21 @@ function playGame(number)
             {
                     CScore ++
             }
-
+var declareWinner = ""
+if(CScore === 5)
+{
+    declareWinner = "Computer Winner! "
+}
+    else if(HScore === 5)
+    {
+        declareWinner = "You Win! "
+    }
+    else{
+        declareWinner = ""
+    }
+    
     const p_select = document.querySelector("p");
-    p_select.textContent = "Human Score: " + HScore + " computer Score: " + CScore
+    p_select.textContent = declareWinner + "Human Score: " + HScore + " computer Score: " + CScore
     
 }
 
