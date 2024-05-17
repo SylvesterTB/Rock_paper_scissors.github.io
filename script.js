@@ -79,19 +79,17 @@ function playRound(humanChoice, ComputerChoice)
     }
 }
 
+var HScore = 0
+var CScore = 0
 
 // while loops five times over playround() and increment score according playRound results
-function playGame()
+function playGame(number)
 {
-    HScore = 0
-    CScore = 0
-    control = 0
-    // while(control < 5)
-    //     {
-            const humanSelection = getHumanChoice();
+
+    
             const computerSelection = getComputerChoice();
 
-            words = (playRound(humanSelection, computerSelection))           
+            words = (playRound(number, computerSelection))           
                 if(words === "human win")
             {
                     HScore ++
@@ -105,9 +103,9 @@ function playGame()
                     CScore ++
             }
 
-            control ++ 
-        // }
-    console.log("Human Score: " + HScore + " computer Score: " + CScore )
+    const p_select = document.querySelector("p");
+    p_select.textContent = "Human Score: " + HScore + " computer Score: " + CScore
+    
 }
 
 
