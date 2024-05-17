@@ -7,27 +7,34 @@ function getComputerChoice()
     randomNum = Math.random()
     if(randomNum <= .33)
     {
-            newWord = "Rock"
+            randomNum = 0
     }
     else if(randomNum <= .66)
     {
-            newWord = "Paper"
+            randomNum = 1
     }
     else
     {    
-            newWord = "Scissors" 
+            randomNum = 2 
     }
-    return newWord.toUpperCase()
+    return randomNum
 }
 
 // prompt for user input and returns the human choice as a string
-function getHumanChoice()
-{
-    let word = ""
-    word = prompt("enter a Rock, Paper, or Scissors");
-    word = word.toUpperCase()
-    return word
-}
+// function getHumanChoice()
+// {
+//     let word = ""
+//     word = prompt("enter a Rock, Paper, or Scissors");
+//     word = word.toUpperCase()
+//     return word
+// }
+
+
+
+
+
+
+
 
 
 // if  user == computer choice, tie, else return relevant winner  
@@ -39,32 +46,33 @@ function playRound(humanChoice, ComputerChoice)
         console.log("Its a tie")
          return "No winner"
     }
-    if(humanChoice === "ROCK" && ComputerChoice === "SCISSORS")
+    
+    if(humanChoice === 0 && ComputerChoice === 2)
     {
         console.log("You win")
         return "human win"
     }
-    if(humanChoice === "ROCK" && ComputerChoice === "PAPER")
+    if(humanChoice === 0 && ComputerChoice === 1)
     {
-        console.log("You lose 1 ")
+        console.log("You lose to paper")
         return "computer win"
     }
-    if(humanChoice === "PAPER" && ComputerChoice === "SCISSORS")
+    if(humanChoice === 1 && ComputerChoice === 2)
     {
-        console.log("You Lose 3 ")
+        console.log("You Lose to scissors")
         return "computer win"
     }
-    if(humanChoice === "PAPER" && ComputerChoice === "ROCK")
+    if(humanChoice === 1 && ComputerChoice === 0)
     {
         console.log("You win")
         return "human win"
     }
-    if(humanChoice === "SCISSORS" && ComputerChoice === "ROCK")
+    if(humanChoice === 2 && ComputerChoice === 0)
     {
-        console.log("You Lose 2 ")
+        console.log("You Lose to rock")
         return "computer win"
     }
-    if(humanChoice === "SCISSORS" && ComputerChoice === "PAPER")
+    if(humanChoice === 2 && ComputerChoice === 1)
     {
         console.log("You win")
          return "human win"
@@ -78,8 +86,8 @@ function playGame()
     HScore = 0
     CScore = 0
     control = 0
-    while(control < 5)
-        {
+    // while(control < 5)
+    //     {
             const humanSelection = getHumanChoice();
             const computerSelection = getComputerChoice();
 
@@ -98,11 +106,10 @@ function playGame()
             }
 
             control ++ 
-        }
+        // }
     console.log("Human Score: " + HScore + " computer Score: " + CScore )
 }
 
 
 
-
-playGame()
+// playGame()
