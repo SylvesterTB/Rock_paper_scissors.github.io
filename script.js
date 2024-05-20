@@ -106,6 +106,7 @@ var declareWinner = ""
 if(CScore === 5)
 {
     declareWinner = "Computer Winner! "
+    
 }
     else if(HScore === 5)
     {
@@ -116,8 +117,12 @@ if(CScore === 5)
     }
     
     const p_select = document.querySelector("p");
-    p_select.textContent = declareWinner + "Human Score: " + HScore + " computer Score: " + CScore
-    
+    p_select.textContent = declareWinner + "Your Score: " + HScore + " computer Score: " + CScore
+    if(CScore === 5 || HScore === 5)
+    {
+        CScore = 0
+        HScore = 0
+    }
 }
 
 
